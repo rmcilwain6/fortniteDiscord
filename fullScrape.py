@@ -7,7 +7,7 @@ url = 'https://fortnitestats.com/stats/imso-sorry'
 #stats = 'card-body'
 
 def main():
-    #opening up connecting, grabbing page
+    #opening up connection, grabbing page
     uClient = uReq(url)
     page_html = uClient.read()
     uClient.close()
@@ -20,8 +20,9 @@ def main():
 
     headers = [header.get_text().strip() for header in container.findAll("div",{"class":"card-header"})]
     
-    #contains each categories of stats
+    # a list of the HTML cards containg different categories of stats
     card_bodys = container.find_all("div",{"class":"card-body"})
+
     card = {header: 0 for header in headers}
     for header,card_body in zip(headers,card_bodys):
         stats = [stat.get_text() for stat in card_body.find_all('p')]
@@ -30,6 +31,7 @@ def main():
         card[header] = stat_val
 
     print("Dictionary:\n")
+    print(card.items())
     for (header,vals) in card.items():
         print(header)
         print(vals)
