@@ -89,11 +89,11 @@ def sort_stat(li, stat):
 def main():
   all_stats = []
   all_stats = get_html()
-  #print(all_stats)
+  print(all_stats)
   #So right here we have a list of tuples, containing the name of the player, and their stats.
-  print(sort_stat(all_stats, 'SoloWinrate'))
-  print(sort_stat(all_stats, 'DuoKills'))
   print(sort_stat(all_stats, 'Total Kills'))
+  print(sort_stat(all_stats, 'Overall KD'))
+  print(sort_stat(all_stats, 'Total Wins'))
 
 
 
