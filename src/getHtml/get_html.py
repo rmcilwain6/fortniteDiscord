@@ -7,11 +7,11 @@ from bs4 import BeautifulSoup
 class get_html:
 
     def __init__(self, playerName):
+        self.playerName = playerName
         self.url = 'https://fortnitestats.com/stats/' + playerName
-        #self.playerName = playerName
-        #self.websiteBase = 'https://fortnitestats.com/stats/'
 
     def parseWebpage(self):
+        print("Waiting 1 second before getting html data for: " + self.playerName)
         time.sleep(1)
         page = requests.get(self.url)
         if not page:
