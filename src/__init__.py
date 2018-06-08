@@ -12,3 +12,4 @@ if __name__=="__main__":
         #At this point, stats.parseWebpage() returns the BeautifulSoup parsed html. 
         temp = return_stats(data)
         new_dict = temp.storeStats()
+        print(new_dict)

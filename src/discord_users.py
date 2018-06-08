@@ -22,6 +22,7 @@ async def on_message(message):
         mem_list = message.server.members
         for member in mem_list:
             if member.name != 'scraper_bot':
+                print(member.name)
                 msg = member.name
                 await client.send_message(message.channel, msg)
 
